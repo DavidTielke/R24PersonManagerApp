@@ -40,5 +40,28 @@ let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.Simple
 where forbiddenMethods.Any()
  
 select new { t, forbiddenMethods }]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Klassen ohne Namensmuster</Name>
+warnif count > 0 
+
+let classBlacklist = new string[]{"Program"}
+let namePatterns = new string[]
+{
+   "Manager",
+   "Repository",
+   "Parser",
+   "Storer",
+   "Reader",
+   "Commands"
+}
+
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") 
+                                                    && !classBlacklist.Contains(t.SimpleName) 
+                                                    && !t.IsGeneratedByCompiler)
+
+from t in managementClasses
+
+where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
+
+select new { t, t.Methods }]]></Query>
   </Group>
 </Queries>

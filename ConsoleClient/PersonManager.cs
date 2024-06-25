@@ -25,6 +25,14 @@ class PersonManager
 
     public void Copy()
     {
+        var foo = new PersonUtils();
+    }
+}
+
+class PersonUtils
+{
+    public void Foo()
+    {
 
     }
 }
