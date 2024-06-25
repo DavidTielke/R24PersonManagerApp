@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Queries>
+  <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Keine Klasse verletzt SRP</Name>
+warnif count > 0 
+from t in JustMyCode.Types
+where !t.IsGeneratedByCompiler
+ && (t.NbLinesOfCode > 2 || t.NbMethods > 2) // LOC: 220 | Methods: 8
+select new{t, t.NbLinesOfCode, t.NbMethods, Severity = Severity.Blocker}
+]]></Query>
+  <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methoden die SRP verletzten</Name>
+warnif count > 0 
+from m in JustMyCode.Methods
+where !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsGeneratedByCompiler
+   && (m.NbLinesOfCode > 2 || m.CyclomaticComplexity > 2)
+select new { m, m.NbLinesOfCode, m.CyclomaticComplexity }]]></Query>
+</Queries>
