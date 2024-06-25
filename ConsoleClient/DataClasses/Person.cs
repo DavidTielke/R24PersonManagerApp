@@ -1,4 +1,4 @@
-﻿namespace ConsoleClient;
+﻿namespace ConsoleClient.DataClasses;
 
 class Person
 {

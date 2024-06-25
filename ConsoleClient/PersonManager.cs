@@ -1,4 +1,6 @@
-﻿namespace ConsoleClient;
+﻿using ConsoleClient.DataClasses;
+
+namespace ConsoleClient;
 
 class PersonManager
 {
@@ -19,5 +21,10 @@ class PersonManager
     {
         var adults = _repository.Query().Where(p => p.Age >= 18);
         return adults;
+    }
+
+    public void Copy()
+    {
+
     }
 }
