@@ -2,7 +2,7 @@
 
 namespace RV24.PMA.Data.DataStoring;
 
-public class PersonParser
+public class PersonParser : IPersonParser
 {
     public Person ParseCsv(string dataLines)
     {

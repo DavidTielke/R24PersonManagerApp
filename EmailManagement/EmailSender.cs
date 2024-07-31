@@ -1,6 +1,6 @@
 ﻿namespace EmailManagement
 {
-    public class EmailSender
+    public class EmailSender : IEmailSender
     {
         public void Send(string message)
         {

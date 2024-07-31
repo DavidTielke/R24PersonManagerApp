@@ -3,13 +3,13 @@ using RV24.PMA.Data.DataStoring;
 
 namespace RV24.PMA.Logic.Domain.PersonManagement;
 
-public class PersonManager
+public class PersonManager : IPersonManager
 {
-    private PersonRepository _repository;
+    private IPersonRepository _repository;
 
-    public PersonManager()
+    public PersonManager(IPersonRepository repository)
     {
-        _repository = new PersonRepository();
+        _repository = repository;
     }
 
     public void Add(Person person)

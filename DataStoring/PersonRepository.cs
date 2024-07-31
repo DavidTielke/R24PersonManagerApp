@@ -3,20 +3,23 @@ using RV24.PMA.Data.FileStoring;
 
 namespace RV24.PMA.Data.DataStoring;
 
-public class PersonRepository
+public class PersonRepository : IPersonRepository
 {
     private const string DATAPATH = "data.csv";
-    private readonly PersonParser _personParser;
-    private readonly FileReader _fileReader;
-    private readonly FileWriter _fileWriter;
-    private readonly PersonSerializer _personSerializer;
+    private readonly IPersonParser _personParser;
+    private readonly IFileReader _fileReader;
+    private readonly IFileWriter _fileWriter;
+    private readonly IPersonSerializer _personSerializer;
 
-    public PersonRepository()
+    public PersonRepository(IPersonParser personParser, 
+        IFileReader fileReader, 
+        IFileWriter fileWriter, 
+        IPersonSerializer personSerializer)
     {
-        _personParser = new PersonParser();
-        _fileReader = new FileReader();
-        _fileWriter = new FileWriter();
-        _personSerializer = new PersonSerializer();
+        _personParser = personParser;
+        _fileReader = fileReader;
+        _fileWriter = fileWriter;
+        _personSerializer = personSerializer;
     }
 
     public IQueryable<Person> Query()

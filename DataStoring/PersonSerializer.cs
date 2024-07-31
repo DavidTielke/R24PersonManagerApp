@@ -7,7 +7,7 @@ using RV24.PMA.CrossCutting.DataClasses;
 
 namespace RV24.PMA.Data.DataStoring
 {
-    public class PersonSerializer
+    public class PersonSerializer : IPersonSerializer
     {
         public string SerializeToCsv(Person person)
         {

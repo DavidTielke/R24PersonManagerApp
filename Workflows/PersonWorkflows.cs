@@ -9,15 +9,15 @@ using RV24.PMA.Logic.Domain.PersonManagement;
 
 namespace Workflows
 {
-    public class PersonWorkflows
+    public class PersonWorkflows : IPersonWorkflows
     {
-        private readonly PersonManager _personManager;
-        private readonly EmailSender _emailSender;
+        private readonly IPersonManager _personManager;
+        private readonly IEmailSender _emailSender;
 
-        public PersonWorkflows()
+        public PersonWorkflows(IPersonManager personManager, IEmailSender emailSender)
         {
-            _personManager = new PersonManager();
-            _emailSender = new EmailSender();
+            _personManager = personManager;
+            _emailSender = emailSender;
         }
 
         public void Add(Person person)

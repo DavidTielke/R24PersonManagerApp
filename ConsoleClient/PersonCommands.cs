@@ -4,15 +4,15 @@ using Workflows;
 
 namespace RV24.PMA.UI.ConsoleClient;
 
-class PersonCommands
+class PersonCommands : IPersonCommands
 {
-    private readonly PersonManager _manager;
-    private readonly PersonWorkflows _personWorkflows;
+    private readonly IPersonManager _manager;
+    private readonly IPersonWorkflows _personWorkflows;
 
-    public PersonCommands()
+    public PersonCommands(IPersonManager manager, IPersonWorkflows personWorkflows)
     {
-        _manager = new PersonManager();
-        _personWorkflows = new PersonWorkflows();
+        _manager = manager;
+        _personWorkflows = personWorkflows;
     }
 
     public void DisplayAllAdults()

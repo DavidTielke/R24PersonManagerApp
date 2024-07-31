@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RV24.PMA.Data.FileStoring
 {
-    public class FileWriter
+    public class FileWriter : IFileWriter
     {
         public void AppendLine(string path, string line)
         {
