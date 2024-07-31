@@ -1,6 +1,6 @@
-﻿namespace ConsoleClient.DataClasses;
+﻿namespace RV24.PMA.CrossCutting.DataClasses;
 
-class Person
+public class Person
 {
     public int Id { get; set; }
     public string Name { get; set; }

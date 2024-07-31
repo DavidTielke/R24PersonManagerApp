@@ -1,8 +1,8 @@
-﻿using ConsoleClient.DataClasses;
+﻿using RV24.PMA.CrossCutting.DataClasses;
 
-namespace ConsoleClient;
+namespace RV24.PMA.Data.DataStoring;
 
-class PersonParser
+public class PersonParser
 {
     public Person ParseCsv(string dataLines)
     {

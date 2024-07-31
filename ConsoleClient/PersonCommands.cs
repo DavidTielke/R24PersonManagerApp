@@ -1,4 +1,6 @@
-﻿namespace ConsoleClient;
+﻿using RV24.PMA.Logic.PersonManagement;
+
+namespace RV24.PMA.UI.ConsoleClient;
 
 class PersonCommands
 {

@@ -1,8 +1,9 @@
-﻿using ConsoleClient.DataClasses;
+﻿using RV24.PMA.CrossCutting.DataClasses;
+using RV24.PMA.Data.FileStoring;
 
-namespace ConsoleClient;
+namespace RV24.PMA.Data.DataStoring;
 
-class PersonRepository
+public class PersonRepository
 {
     private readonly PersonParser _parser;
     private readonly FileReader _reader;

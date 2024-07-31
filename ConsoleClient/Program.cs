@@ -1,6 +1,4 @@
-﻿using System.Threading.Channels;
-
-namespace ConsoleClient
+﻿namespace RV24.PMA.UI.ConsoleClient
 {
     internal class Program
     {

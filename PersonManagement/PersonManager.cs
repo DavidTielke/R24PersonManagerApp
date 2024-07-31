@@ -1,8 +1,9 @@
-﻿using ConsoleClient.DataClasses;
+﻿using RV24.PMA.CrossCutting.DataClasses;
+using RV24.PMA.Data.DataStoring;
 
-namespace ConsoleClient;
+namespace RV24.PMA.Logic.PersonManagement;
 
-class PersonManager
+public class PersonManager
 {
     private PersonRepository _repository;
 
@@ -21,18 +22,5 @@ class PersonManager
     {
         var adults = _repository.Query().Where(p => p.Age >= 18);
         return adults;
-    }
-
-    public void Copy()
-    {
-        var foo = new PersonUtils();
-    }
-}
-
-class PersonUtils
-{
-    public void Foo()
-    {
-
     }
 }

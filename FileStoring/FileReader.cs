@@ -1,6 +1,6 @@
-﻿namespace ConsoleClient;
+﻿namespace RV24.PMA.Data.FileStoring;
 
-class FileReader
+public class FileReader
 {
     public IEnumerable<string> ReadAllLines(string path)
     {
