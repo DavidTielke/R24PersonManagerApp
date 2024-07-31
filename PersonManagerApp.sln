@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStoring", "DataStoring\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonManagement", "PersonManagement\PersonManagement.csproj", "{BA525BBF-D15D-4620-9702-FED40F78814B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient", "ApiClient\ApiClient.csproj", "{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{BA525BBF-D15D-4620-9702-FED40F78814B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA525BBF-D15D-4620-9702-FED40F78814B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA525BBF-D15D-4620-9702-FED40F78814B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{88CCEE24-CD55-4BE9-BF5C-2413F6A0A861} = {DE0C7E29-322E-4BCC-8099-627B069A5142}
 		{5DA1D021-EC1E-4B91-906E-F29D3DD5B7C6} = {DE0C7E29-322E-4BCC-8099-627B069A5142}
 		{BA525BBF-D15D-4620-9702-FED40F78814B} = {162A8593-1937-4ED6-AB47-F708E28992A5}
+		{9AD3FAB7-9C56-465F-980D-DB30F918B1AC} = {27977E05-734D-495D-8F92-6C0313FB9709}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B78DB874-09C9-4C44-90F1-BF98B9CC45BB}
