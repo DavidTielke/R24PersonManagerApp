@@ -6,6 +6,7 @@
         {
             var commands = new PersonCommands();
 
+            commands.AddTestPerson();
             commands.DisplayAllAdults();
             commands.DisplayAllChildren();
         }

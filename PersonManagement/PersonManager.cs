@@ -1,7 +1,7 @@
 ﻿using RV24.PMA.CrossCutting.DataClasses;
 using RV24.PMA.Data.DataStoring;
 
-namespace RV24.PMA.Logic.PersonManagement;
+namespace RV24.PMA.Logic.Domain.PersonManagement;
 
 public class PersonManager
 {
@@ -10,6 +10,14 @@ public class PersonManager
     public PersonManager()
     {
         _repository = new PersonRepository();
+    }
+
+    public void Add(Person person)
+    {
+        if (string.IsNullOrWhiteSpace(person.Name) || person.Name.Length < 3)
+            throw new ArgumentException("Name not valid", nameof(person.Name));
+
+        _repository.Insert(person);
     }
 
     public IQueryable<Person> GetAllChildren()

@@ -5,19 +5,38 @@ namespace RV24.PMA.Data.DataStoring;
 
 public class PersonRepository
 {
-    private readonly PersonParser _parser;
-    private readonly FileReader _reader;
+    private const string DATAPATH = "data.csv";
+    private readonly PersonParser _personParser;
+    private readonly FileReader _fileReader;
+    private readonly FileWriter _fileWriter;
+    private readonly PersonSerializer _personSerializer;
 
     public PersonRepository()
     {
-        _parser = new PersonParser();
-        _reader = new FileReader();
+        _personParser = new PersonParser();
+        _fileReader = new FileReader();
+        _fileWriter = new FileWriter();
+        _personSerializer = new PersonSerializer();
     }
 
     public IQueryable<Person> Query()
     {
-        var lines = _reader.ReadAllLines("data.csv");
-        var persons = lines.Select(l => _parser.ParseCsv(l));
+        var lines = _fileReader.ReadAllLines(DATAPATH);
+        var persons = lines.Select(l => _personParser.ParseCsv(l));
         return persons.AsQueryable();
+    }
+
+    public void Insert(Person person)
+    {
+        var id = GetMaxId() + 1;
+        person.Id = id;
+        var dataLine = _personSerializer.SerializeToCsv(person);
+        _fileWriter.AppendLine(DATAPATH, dataLine);
+    }
+
+    private int GetMaxId()
+    {
+        var maxId = Query().Max(p => p.Id);
+        return maxId;
     }
 }

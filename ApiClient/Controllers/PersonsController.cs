@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RV24.PMA.CrossCutting.DataClasses;
-using RV24.PMA.Logic.PersonManagement;
+using RV24.PMA.Logic.Domain.PersonManagement;
 
 namespace ApiClient.Controllers
 {
