@@ -9,8 +9,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
+    <ProjectReference Include="..\EmailManagement.Contract\EmailManagement.Contract.csproj" />
     <ProjectReference Include="..\EmailManagement\EmailManagement.csproj" />
+    <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
     <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
+    <ProjectReference Include="..\Workflows.Contract\Workflows.Contract.csproj" />
   </ItemGroup>
 
 </Project>

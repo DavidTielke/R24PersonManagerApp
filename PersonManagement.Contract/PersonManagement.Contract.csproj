@@ -4,13 +4,17 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>RV24.PMA.Logic.Domain.PersonManagement</RootNamespace>
+	  <RootNamespace>RV24.PMA.Logic.Domain.PersonManagement.Contract</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Callbacks\" />
+    <Folder Include="DataClasses\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
-    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
-    <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Mappings;
 using Microsoft.Extensions.DependencyInjection;
 
+// ReSharper disable CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
