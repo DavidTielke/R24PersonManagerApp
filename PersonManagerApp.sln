@@ -38,6 +38,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailManagement", "EmailMan
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{A9157E9A-59EC-48A0-8F42-A9CF713331A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{44A4105F-122B-43B9-9545-C019D17588D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappings", "Mappings\Mappings.csproj", "{05B395DF-0433-41F5-8AD9-74E168E8D0B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,10 @@ Global
 		{5577ACD9-DD33-48E8-A39B-57A6449F727A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5577ACD9-DD33-48E8-A39B-57A6449F727A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5577ACD9-DD33-48E8-A39B-57A6449F727A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B395DF-0433-41F5-8AD9-74E168E8D0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B395DF-0433-41F5-8AD9-74E168E8D0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B395DF-0433-41F5-8AD9-74E168E8D0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B395DF-0433-41F5-8AD9-74E168E8D0B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{563A0627-735C-4206-AC96-49C865D75FCA} = {937EF2A8-FADF-4CC3-AB67-561BB58A2DFE}
 		{5577ACD9-DD33-48E8-A39B-57A6449F727A} = {A9157E9A-59EC-48A0-8F42-A9CF713331A1}
 		{A9157E9A-59EC-48A0-8F42-A9CF713331A1} = {162A8593-1937-4ED6-AB47-F708E28992A5}
+		{05B395DF-0433-41F5-8AD9-74E168E8D0B8} = {44A4105F-122B-43B9-9545-C019D17588D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B78DB874-09C9-4C44-90F1-BF98B9CC45BB}

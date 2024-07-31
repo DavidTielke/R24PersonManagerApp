@@ -13,6 +13,7 @@ namespace ApiClient
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddApplicationMappings();
 
             var app = builder.Build();
 

@@ -8,11 +8,11 @@ namespace ApiClient.Controllers
     [Route("[controller]")]
     public class PersonsController : ControllerBase
     {
-        private readonly PersonManager _personManager;
+        private readonly IPersonManager _personManager;
 
-        public PersonsController()
+        public PersonsController(IPersonManager personManager)
         {
-            _personManager = new PersonManager(null);
+            _personManager = personManager;
         }
 
         [Route("Adults")]

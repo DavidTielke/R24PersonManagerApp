@@ -1,5 +1,4 @@
 ﻿using EmailManagement;
-using Logging;
 using Microsoft.Extensions.DependencyInjection;
 using RV24.PMA.Data.DataStoring;
 using RV24.PMA.Data.FileStoring;
@@ -14,15 +13,9 @@ namespace RV24.PMA.UI.ConsoleClient
         {
             var collection = new ServiceCollection();
 
+            collection.AddApplicationMappings();
+
             collection.AddTransient<IPersonCommands, PersonCommands>();
-            collection.AddTransient<IPersonManager, PersonManager>();
-            collection.AddTransient<IPersonWorkflows, PersonWorkflows>();
-            collection.AddTransient<IPersonRepository, PersonRepository>();
-            collection.AddTransient<IPersonParser, PersonParser>();
-            collection.AddTransient<IPersonSerializer, PersonSerializer>();
-            collection.AddTransient<IFileReader, FileReader>();
-            collection.AddTransient<IFileWriter, FileWriter>();
-            collection.AddTransient<IEmailSender, EmailSender>();
 
             var provider = collection.BuildServiceProvider();
 
