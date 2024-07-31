@@ -4,7 +4,7 @@ namespace RV24.PMA.Data.DataStoring;
 
 public class PersonParser : IPersonParser
 {
-    public Person ParseCsv(string dataLines)
+    public Person ParseFromCsv(string dataLines)
     {
         var parts = dataLines.Split(",");
         var person = new Person

@@ -12,7 +12,7 @@ namespace ApiClient.Controllers
 
         public PersonsController()
         {
-            _personManager = new PersonManager();
+            _personManager = new PersonManager(null);
         }
 
         [Route("Adults")]

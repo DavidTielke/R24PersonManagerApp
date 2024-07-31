@@ -29,13 +29,13 @@ class PersonCommands : IPersonCommands
         children.ForEach(c => Console.WriteLine(c.Name));
     }
 
-    public void AddTestPerson()
+    public void InputTestPerson()
     {
         var person = new Person
         {
             Name = "Pferdi",
             Age = 3
         };
-        _personWorkflows.Add(person);
+        _personWorkflows.RunAdd(person);
     }
 }

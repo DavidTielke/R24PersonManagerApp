@@ -18,23 +18,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{DE0C7E29-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{166ACB2B-BE59-4367-BE1F-C8E0D39A339F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataClasses", "DataClasses\DataClasses.csproj", "{8EC597B1-A8E8-4305-9B62-99B6D0B785F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataClasses", "DataClasses\DataClasses.csproj", "{8EC597B1-A8E8-4305-9B62-99B6D0B785F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStoring", "FileStoring\FileStoring.csproj", "{88CCEE24-CD55-4BE9-BF5C-2413F6A0A861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileStoring", "FileStoring\FileStoring.csproj", "{88CCEE24-CD55-4BE9-BF5C-2413F6A0A861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStoring", "DataStoring\DataStoring.csproj", "{5DA1D021-EC1E-4B91-906E-F29D3DD5B7C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStoring", "DataStoring\DataStoring.csproj", "{5DA1D021-EC1E-4B91-906E-F29D3DD5B7C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonManagement", "PersonManagement\PersonManagement.csproj", "{BA525BBF-D15D-4620-9702-FED40F78814B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonManagement", "PersonManagement\PersonManagement.csproj", "{BA525BBF-D15D-4620-9702-FED40F78814B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient", "ApiClient\ApiClient.csproj", "{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiClient", "ApiClient\ApiClient.csproj", "{9AD3FAB7-9C56-465F-980D-DB30F918B1AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{937EF2A8-FADF-4CC3-AB67-561BB58A2DFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{32F50E8F-FBD6-486A-9B2F-D7AD6C231B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflows", "Workflows\Workflows.csproj", "{563A0627-735C-4206-AC96-49C865D75FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workflows", "Workflows\Workflows.csproj", "{563A0627-735C-4206-AC96-49C865D75FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManagement", "EmailManagement\EmailManagement.csproj", "{5577ACD9-DD33-48E8-A39B-57A6449F727A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailManagement", "EmailManagement\EmailManagement.csproj", "{5577ACD9-DD33-48E8-A39B-57A6449F727A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{A9157E9A-59EC-48A0-8F42-A9CF713331A1}"
 EndProject

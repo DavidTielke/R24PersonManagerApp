@@ -4,5 +4,5 @@ namespace RV24.PMA.Data.DataStoring;
 
 public interface IPersonParser
 {
-    Person ParseCsv(string dataLines);
+    Person ParseFromCsv(string dataLines);
 }

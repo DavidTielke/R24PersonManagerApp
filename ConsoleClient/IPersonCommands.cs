@@ -4,5 +4,5 @@ internal interface IPersonCommands
 {
     void DisplayAllAdults();
     void DisplayAllChildren();
-    void AddTestPerson();
+    void InputTestPerson();
 }

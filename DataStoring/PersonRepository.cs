@@ -25,7 +25,7 @@ public class PersonRepository : IPersonRepository
     public IQueryable<Person> Query()
     {
         var lines = _fileReader.ReadAllLines(DATAPATH);
-        var persons = lines.Select(l => _personParser.ParseCsv(l));
+        var persons = lines.Select(l => _personParser.ParseFromCsv(l));
         return persons.AsQueryable();
     }
 

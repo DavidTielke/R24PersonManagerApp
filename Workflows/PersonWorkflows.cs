@@ -20,7 +20,7 @@ namespace Workflows
             _emailSender = emailSender;
         }
 
-        public void Add(Person person)
+        public void RunAdd(Person person)
         {
             _personManager.Add(person);
             _emailSender.Send($"Begrüssungsmail für {person.Name}");

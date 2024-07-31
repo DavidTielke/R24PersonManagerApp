@@ -4,5 +4,5 @@ namespace Workflows;
 
 public interface IPersonWorkflows
 {
-    void Add(Person person);
+    void RunAdd(Person person);
 }

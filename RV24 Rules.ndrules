@@ -21,7 +21,34 @@ from m in trueMethods
 select new { m, m.NbLinesOfCode, m.CyclomaticComplexity, Debt = 5.ToMinutes().ToDebt() }]]></Query>
   </Group>
   <Group Name="Namensmuster" Active="True" ShownInReport="False">
-    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[DD0201] Namensmuster Manager wird eingehalten</Name>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0201] Klassen ohne Namensmuster</Name>
+warnif count > 0 
+
+let classBlacklist = new string[]{"Program"}
+let namePatterns = new string[]
+{
+   "Manager",
+   "Repository",
+   "Parser",
+   "Reader",
+   "Commands",
+   "Writer",
+   "Serializer",
+   "Sender",
+   "Workflows",
+   "Controller"
+}
+
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") 
+                                                    && !classBlacklist.Contains(t.SimpleName) 
+                                                    && !t.IsGeneratedByCompiler)
+
+from t in managementClasses
+
+where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
+
+select new { t, t.Methods, Debt = 20.ToMinutes().ToDebt() }]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0202] Namensmuster Manager wird eingehalten</Name>
 warnif count > 0
  
 let namePattern = "Manager"
@@ -40,35 +67,32 @@ let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.Simple
 where forbiddenMethods.Any()
  
 select new { t, forbiddenMethods }]]></Query>
-    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Klassen ohne Namensmuster</Name>
-warnif count > 0 
-
-let classBlacklist = new string[]{"Program"}
-let namePatterns = new string[]
-{
-   "Manager",
-   "Repository",
-   "Parser",
-   "Storer",
-   "Reader",
-   "Commands"
-}
-
-let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") 
-                                                    && !classBlacklist.Contains(t.SimpleName) 
-                                                    && !t.IsGeneratedByCompiler)
-
-from t in managementClasses
-
-where !namePatterns.Any(np => t.SimpleName.EndsWith(np))
-
-select new { t, t.Methods, Debt = 20.ToMinutes().ToDebt() }]]></Query>
-    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[DD0201] Namensmuster Repository wird eingehalten</Name>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0203] Namensmuster Repository wird eingehalten</Name>
 warnif count > 0
  
 let namePattern = "Repository"
 let allowedMethods = new []{"Insert","Update","Delete", "Query"}
 let allowedPrefixes = new string[]{}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor && m.IsPublic)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0204] Namensmuster Parser wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Parser"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"ParseFrom"}
  
  
 let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
@@ -82,6 +106,136 @@ let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.Simple
 where forbiddenMethods.Any()
  
 select new { t, forbiddenMethods }
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0205] Namensmuster Serializer wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Serializer"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"SerializeFrom","SerializeTo"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0206] Namensmuster Parser wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Parser"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"ParseFrom"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0207] Namensmuster Reader wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Reader"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"Read"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0208] Namensmuster Writer wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Writer"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"Append"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0209] Namensmuster Workflow wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Workflow"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"Run"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+
+]]></Query>
+    <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>[RC0209] Namensmuster Commands wird eingehalten</Name>
+warnif count > 0
+ 
+let namePattern = "Commands"
+let allowedMethods = new string[]{}
+let allowedPrefixes = new string[]{"Display","Input"}
+ 
+ 
+let managementClasses = JustMyCode.Types.Where(t => !t.ParentNamespace.NameLike("DataClasses") && !t.IsGeneratedByCompiler)
+ 
+from t in managementClasses.Where(t1 => t1.Name.EndsWith(namePattern))
+ 
+let trueMethods = t.Methods.Where(m => !m.IsGeneratedByCompiler && !m.IsPropertyGetter && !m.IsPropertySetter && !m.IsConstructor)
+ 
+let forbiddenMethods = trueMethods.Where(m => !allowedMethods.Any(m1 => m.SimpleName == m1) 
+&& allowedPrefixes.All(mp => !m.SimpleName.StartsWith(mp)))
+where forbiddenMethods.Any()
+ 
+select new { t, forbiddenMethods }
+
+
+
 ]]></Query>
   </Group>
 </Queries>
