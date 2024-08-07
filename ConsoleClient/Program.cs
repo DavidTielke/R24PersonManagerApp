@@ -21,15 +21,8 @@ namespace RV24.PMA.UI.ConsoleClient
 
             var provider = collection.BuildServiceProvider();
 
-            var config = provider.GetRequiredService<IConfigurator>();
-            config.Set("PersonManagement.AgeTreshold", 10);
-
-            var configRepository = provider.GetRequiredService<IConfigEntryRepository>();
-            var entries = configRepository.GetAll().ToList();
-
-            var first = entries.First();
-            first.Value = "50";
-            configRepository.Update(first);
+            //var config = provider.GetRequiredService<IConfigurator>();
+            //config.Set("PersonManagement.AgeTreshold", 10);
 
             var commands = provider.GetRequiredService<IPersonCommands>();
 
