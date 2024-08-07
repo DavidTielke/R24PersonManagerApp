@@ -9,22 +9,27 @@ namespace RV24.PMA.Logic.Domain.PersonManagement;
 
 public class PersonManager : IPersonManager
 {
-    private IPersonRepository _repository;
+    private IRepository<Person> _repository;
+    private readonly ILogger<PersonManager> _logger;
     private readonly int AGETRESHOLD;
 
-    public PersonManager(IPersonRepository repository,
-        IConfigurator config)
+    public PersonManager(IRepository<Person> repository,
+        IConfigurator config,
+        ILogger<PersonManager> logger)
     {
         AGETRESHOLD = config.Get<int>("PersonManagement.AgeTreshold");
         _repository = repository;
+        _logger = logger;
     }
 
     public void Add(Person person)
     {
+        _logger.LogDebug("Add betreten");
         if (string.IsNullOrWhiteSpace(person.Name) || person.Name.Length < 3)
             throw new ArgumentException("Name not valid", nameof(person.Name));
 
         _repository.Insert(person);
+        _logger.LogDebug("Add verlassen");
     }
 
     public IQueryable<Person> GetAllChildren()

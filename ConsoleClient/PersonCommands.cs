@@ -35,7 +35,8 @@ class PersonCommands : IPersonCommands
         var person = new Person
         {
             Name = "Pferdi",
-            Age = 3
+            Age = 3,
+            FK_CategoryId = 2
         };
         _personWorkflows.RunAdd(person);
     }

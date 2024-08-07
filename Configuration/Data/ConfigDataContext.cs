@@ -12,7 +12,7 @@ namespace RV24.PMA.CrossCutting.Configuration.Data
     public class ConfigDataContext : DbContext
     {
         public static readonly ILoggerFactory MyLoggerFactory
-            = LoggerFactory.Create(builder => { builder.AddConsole(); });
+            = LoggerFactory.Create(builder => { builder.AddDebug(); });
 
         public ConfigDataContext() : base()
         {

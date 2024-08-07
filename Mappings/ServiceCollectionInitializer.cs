@@ -22,9 +22,7 @@ namespace Mappings
         {
             collection.AddTransient<IPersonManager, PersonManager>();
             collection.AddTransient<IPersonWorkflows, PersonWorkflows>();
-            collection.AddTransient<IPersonRepository, PersonRepository>();
-            collection.AddTransient<IPersonParser, PersonParser>();
-            collection.AddTransient<IPersonSerializer, PersonSerializer>();
+            collection.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             collection.AddTransient<IFileReader, FileReader>();
             collection.AddTransient<IFileWriter, FileWriter>();
             collection.AddTransient<IEmailSender, EmailSender>();

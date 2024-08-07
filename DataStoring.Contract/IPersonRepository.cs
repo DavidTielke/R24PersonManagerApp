@@ -2,8 +2,10 @@
 
 namespace RV24.PMA.Data.DataStoring.Contract;
 
-public interface IPersonRepository
+public interface IRepository<TEntity>
+    where TEntity : class
 {
-    IQueryable<Person> Query();
-    void Insert(Person person);
+    IQueryable<TEntity> Query();
+    void Insert(TEntity entity);
+    void Update(TEntity entity);
 }

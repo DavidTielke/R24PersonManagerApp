@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RV24.PMA.CrossCutting.Configuration.Contract;
@@ -18,6 +19,19 @@ namespace RV24.PMA.UI.ConsoleClient
 
             collection.AddApplicationMappings();
 
+            collection.AddLogging(c =>
+            {
+                c.AddFilter(ll => true);
+                c.AddDebug();
+            });
+
+            collection.AddDbContext<DatabaseContext>(o =>
+            {
+                o.UseSqlServer(
+                    "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PersonManagerApp;Integrated Security=True");
+            });
+
+
             collection.AddTransient<IPersonCommands, PersonCommands>();
 
             var provider = collection.BuildServiceProvider();
@@ -30,26 +44,9 @@ namespace RV24.PMA.UI.ConsoleClient
 
             var commands = provider.GetRequiredService<IPersonCommands>();
 
-            commands.InputTestPerson();
+            //commands.InputTestPerson();
             commands.DisplayAllAdults();
             commands.DisplayAllChildren();
-        }
-    }
-
-    class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public User()
-        {
-            
-        }
-
-        public User(int id, string name)
-        {
-            Id = id;
-            Name = name;
         }
     }
 }
