@@ -1,4 +1,5 @@
-﻿using RV24.PMA.CrossCutting.Configuration.Contract;
+﻿using Microsoft.Extensions.Logging;
+using RV24.PMA.CrossCutting.Configuration.Contract;
 using RV24.PMA.CrossCutting.DataClasses;
 using RV24.PMA.Data.DataStoring;
 using RV24.PMA.Data.DataStoring.Contract;

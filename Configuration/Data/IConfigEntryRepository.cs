@@ -24,7 +24,7 @@ namespace RV24.PMA.CrossCutting.Configuration.Data
 
         public void Update(ConfigEntry entry)
         {
-            
+            var entryFromDB = GetAll().Single(c => c.Id == entry.Id);
         }
 
         public IQueryable<ConfigEntry> GetAll()

@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using RV24.PMA.CrossCutting.Configuration.Data.Mappings;
 
 namespace RV24.PMA.CrossCutting.Configuration.Data
 {
     public class ConfigDataContext : DbContext
     {
+        public static readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder => { builder.AddConsole(); });
+
         public ConfigDataContext() : base()
         {
             
@@ -19,7 +23,9 @@ namespace RV24.PMA.CrossCutting.Configuration.Data
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PersonManagerApp;Integrated Security=True");
+            optionsBuilder
+                .UseLoggerFactory(MyLoggerFactory)
+                .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PersonManagerApp;Integrated Security=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
