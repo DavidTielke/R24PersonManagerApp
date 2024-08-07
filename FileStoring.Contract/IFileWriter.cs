@@ -1,4 +1,4 @@
-﻿namespace RV24.PMA.Data.FileStoring;
+﻿namespace RV24.PMA.Data.FileStoring.Contract;
 
 public interface IFileWriter
 {

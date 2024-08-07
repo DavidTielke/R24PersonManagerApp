@@ -1,9 +1,8 @@
-﻿using EmailManagement;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using RV24.PMA.CrossCutting.Configuration.Contract;
 using RV24.PMA.Data.DataStoring;
 using RV24.PMA.Data.FileStoring;
 using RV24.PMA.Logic.Domain.PersonManagement;
-using Workflows;
 
 namespace RV24.PMA.UI.ConsoleClient
 {
@@ -18,6 +17,9 @@ namespace RV24.PMA.UI.ConsoleClient
             collection.AddTransient<IPersonCommands, PersonCommands>();
 
             var provider = collection.BuildServiceProvider();
+
+            var config = provider.GetRequiredService<IConfigurator>();
+            config.Set("PersonManagement.AgeTreshold", 10);
 
             var commands = provider.GetRequiredService<IPersonCommands>();
 

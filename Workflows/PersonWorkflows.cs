@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EmailManagement;
-using RV24.PMA.CrossCutting.DataClasses;
-using RV24.PMA.Logic.Domain.PersonManagement;
+﻿using RV24.PMA.CrossCutting.DataClasses;
+using RV24.PMA.Logic.Business.Workflows.Contract;
+using RV24.PMA.Logic.Domain.EmailManagement.Contract;
+using RV24.PMA.Logic.Domain.PersonManagement.Contract;
 
-namespace Workflows
+namespace RV24.PMA.Logic.Business.Workflows
 {
     public class PersonWorkflows : IPersonWorkflows
     {

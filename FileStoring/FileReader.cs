@@ -1,4 +1,6 @@
-﻿namespace RV24.PMA.Data.FileStoring;
+﻿using RV24.PMA.Data.FileStoring.Contract;
+
+namespace RV24.PMA.Data.FileStoring;
 
 public class FileReader : IFileReader
 {

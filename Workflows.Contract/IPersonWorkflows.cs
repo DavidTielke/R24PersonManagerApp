@@ -1,6 +1,6 @@
 ﻿using RV24.PMA.CrossCutting.DataClasses;
 
-namespace Workflows;
+namespace RV24.PMA.Logic.Business.Workflows.Contract;
 
 public interface IPersonWorkflows
 {

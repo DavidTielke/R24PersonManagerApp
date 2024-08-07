@@ -1,9 +1,16 @@
-﻿using EmailManagement;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using RV24.PMA.CrossCutting.Configuration;
+using RV24.PMA.CrossCutting.Configuration.Contract;
 using RV24.PMA.Data.DataStoring;
+using RV24.PMA.Data.DataStoring.Contract;
 using RV24.PMA.Data.FileStoring;
+using RV24.PMA.Data.FileStoring.Contract;
+using RV24.PMA.Logic.Business.Workflows;
+using RV24.PMA.Logic.Business.Workflows.Contract;
+using RV24.PMA.Logic.Domain.EmailManagement;
+using RV24.PMA.Logic.Domain.EmailManagement.Contract;
 using RV24.PMA.Logic.Domain.PersonManagement;
-using Workflows;
+using RV24.PMA.Logic.Domain.PersonManagement.Contract;
 
 namespace Mappings
 {
@@ -19,6 +26,7 @@ namespace Mappings
             collection.AddTransient<IFileReader, FileReader>();
             collection.AddTransient<IFileWriter, FileWriter>();
             collection.AddTransient<IEmailSender, EmailSender>();
+            collection.AddSingleton<IConfigurator, MemoryConfigurator>();
         }
     }
 }

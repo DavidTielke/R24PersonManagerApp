@@ -1,4 +1,4 @@
-﻿namespace EmailManagement;
+﻿namespace RV24.PMA.Logic.Domain.EmailManagement.Contract;
 
 public interface IEmailSender
 {

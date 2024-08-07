@@ -1,6 +1,7 @@
 ﻿using RV24.PMA.CrossCutting.DataClasses;
+using RV24.PMA.Logic.Business.Workflows.Contract;
 using RV24.PMA.Logic.Domain.PersonManagement;
-using Workflows;
+using RV24.PMA.Logic.Domain.PersonManagement.Contract;
 
 namespace RV24.PMA.UI.ConsoleClient;
 

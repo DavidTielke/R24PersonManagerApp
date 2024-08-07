@@ -40,17 +40,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{44A4105F-122B-43B9-9545-C019D17588D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappings", "Mappings\Mappings.csproj", "{05B395DF-0433-41F5-8AD9-74E168E8D0B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mappings", "Mappings\Mappings.csproj", "{05B395DF-0433-41F5-8AD9-74E168E8D0B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManagement.Contract", "EmailManagement.Contract\EmailManagement.Contract.csproj", "{8C0695CF-374A-44C0-A6AB-1FFA61592075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailManagement.Contract", "EmailManagement.Contract\EmailManagement.Contract.csproj", "{8C0695CF-374A-44C0-A6AB-1FFA61592075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonManagement.Contract", "PersonManagement.Contract\PersonManagement.Contract.csproj", "{E4AC222C-FE14-4DBB-9C06-E0B3C2EB8D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonManagement.Contract", "PersonManagement.Contract\PersonManagement.Contract.csproj", "{E4AC222C-FE14-4DBB-9C06-E0B3C2EB8D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflows.Contract", "Workflows.Contract\Workflows.Contract.csproj", "{DF435841-01A1-4938-8A84-0DB5854B8F46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workflows.Contract", "Workflows.Contract\Workflows.Contract.csproj", "{DF435841-01A1-4938-8A84-0DB5854B8F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStoring.Contract", "DataStoring.Contract\DataStoring.Contract.csproj", "{ACB87A43-5624-4319-952A-65E0F33C888A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStoring.Contract", "DataStoring.Contract\DataStoring.Contract.csproj", "{ACB87A43-5624-4319-952A-65E0F33C888A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStoring.Contract", "FileStoring.Contract\FileStoring.Contract.csproj", "{E795F013-CCC8-47B9-BB5D-EF3663A42D1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileStoring.Contract", "FileStoring.Contract\FileStoring.Contract.csproj", "{E795F013-CCC8-47B9-BB5D-EF3663A42D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{32D9F423-C883-49E7-8D27-3FF97100F2BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Contract", "Configuration.Contract\Configuration.Contract.csproj", "{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +118,14 @@ Global
 		{E795F013-CCC8-47B9-BB5D-EF3663A42D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E795F013-CCC8-47B9-BB5D-EF3663A42D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E795F013-CCC8-47B9-BB5D-EF3663A42D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D9F423-C883-49E7-8D27-3FF97100F2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D9F423-C883-49E7-8D27-3FF97100F2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D9F423-C883-49E7-8D27-3FF97100F2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D9F423-C883-49E7-8D27-3FF97100F2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +148,8 @@ Global
 		{DF435841-01A1-4938-8A84-0DB5854B8F46} = {937EF2A8-FADF-4CC3-AB67-561BB58A2DFE}
 		{ACB87A43-5624-4319-952A-65E0F33C888A} = {DE0C7E29-322E-4BCC-8099-627B069A5142}
 		{E795F013-CCC8-47B9-BB5D-EF3663A42D1D} = {DE0C7E29-322E-4BCC-8099-627B069A5142}
+		{32D9F423-C883-49E7-8D27-3FF97100F2BB} = {166ACB2B-BE59-4367-BE1F-C8E0D39A339F}
+		{FFAFAD3C-98FC-48C5-8780-56F938A3FEF3} = {166ACB2B-BE59-4367-BE1F-C8E0D39A339F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B78DB874-09C9-4C44-90F1-BF98B9CC45BB}

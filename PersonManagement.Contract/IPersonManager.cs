@@ -1,6 +1,6 @@
 ﻿using RV24.PMA.CrossCutting.DataClasses;
 
-namespace RV24.PMA.Logic.Domain.PersonManagement;
+namespace RV24.PMA.Logic.Domain.PersonManagement.Contract;
 
 public interface IPersonManager
 {
