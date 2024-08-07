@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RV24.PMA.CrossCutting.Configuration;
 using RV24.PMA.CrossCutting.Configuration.Contract;
+using RV24.PMA.CrossCutting.Configuration.Data;
+using RV24.PMA.CrossCutting.Configuration.Logic;
 using RV24.PMA.Data.DataStoring;
 using RV24.PMA.Data.DataStoring.Contract;
 using RV24.PMA.Data.FileStoring;
@@ -27,6 +29,10 @@ namespace Mappings
             collection.AddTransient<IFileWriter, FileWriter>();
             collection.AddTransient<IEmailSender, EmailSender>();
             collection.AddSingleton<IConfigurator, MemoryConfigurator>();
+
+            // CC.Configuration
+            collection.AddTransient<IConfigEntryManager, ConfigEntryManager>();
+            collection.AddTransient<IConfigEntryRepository, ConfigEntryRepository>();
         }
     }
 }
